@@ -11,19 +11,21 @@ pub fn run( args : Vec<String> ) {
 /**/ let l_format = ["l".to_string(), "-l".to_string(),   "--low".to_string()]; /**/
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 
+    // This variable will contain parsed arguments
     let parsed = logic::parse(args);
+
     let mut high : i32  = 0 ;
     let mut low : i32  = 0;
     for (op, value) in parsed.iter() {
         if l_format.contains(op) {
-            high = match value.parse::<i32>() {
+            low = match value.parse::<i32>() {
                 Ok(num) => num,
                 Err(_e) => panic!("exit"),
             }
         } 
 
         if h_format.contains(op) {
-            low = match value.parse::<i32>() {
+            high = match value.parse::<i32>() {
                 Ok(num) => num,
                 Err(_e) => panic!("EXIT"),
             };
