@@ -95,6 +95,19 @@ pub fn parse(args: Vec<String>) -> Vec<(String, String)> {
                     process::exit(1);
                 }
             };
+
+    let mut not_present : bool = false;
+
+            for _ in 0..result_vec.len() {
+                if l_format.contains(&"l".to_string()) {
+                    not_present = true;
+                }
+            }
+
+            if not_present {
+                result_vec.push((String::from("l"), String::from("0")));
+            }
+
             result_vec.push((String::from("h"), String::from(format!("{}", higher_value))));
         }
     }
