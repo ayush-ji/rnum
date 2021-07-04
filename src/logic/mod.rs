@@ -2,19 +2,14 @@ use std::process;
 //use std::error::Error;
 
 pub fn parse(args: Vec<String>) -> Vec<(String, String)> {
-    /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-    /**/
-    let f_format = ["f".to_string(), "-f".to_string(), "--float".to_string()]; /**/
-    /**/
-    let i_format = ["i".to_string(), "-i".to_string(), "--int".to_string()]; /**/
-    /**/
-    let h_format = ["h".to_string(), "-h".to_string(), "--high".to_string()]; /**/
-    /**/
-    let l_format = ["l".to_string(), "-l".to_string(), "--low".to_string()]; /**/
-    /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+    let f_format = ["f".to_string(), "-f".to_string(), "--float".to_string()];
+    let i_format = ["i".to_string(), "-i".to_string(), "--int".to_string()];
+    let h_format = ["h".to_string(), "-h".to_string(), "--high".to_string()];
+    let l_format = ["l".to_string(), "-l".to_string(), "--low".to_string()];
 
     // this vector will store the parsed inputs
-    let mut result_vec: Vec<(String, String)> = vec![];
+    let mut result_vec: Vec<(String, String)> = Vec::new();
 
     if f_format.contains(&args[1]) {
         result_vec.push((String::from("f"), String::from("")));
@@ -25,9 +20,11 @@ pub fn parse(args: Vec<String>) -> Vec<(String, String)> {
         process::exit(1);
     }
 
-    //  WORKING ;:;:;:;....
-
     for item in args.iter() {
+        
+        // This Code is under maintenance 
+        // Once Done will prevent anyone from specifing deplicate -f or -i 
+
         /*
                 if operation == String::from("-i") {
                     if *item == String::from("-f") {
