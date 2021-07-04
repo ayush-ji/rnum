@@ -98,8 +98,9 @@ pub fn parse(args: Vec<String>) -> Vec<(String, String)> {
 
     let mut not_present : bool = false;
 
-            for _ in 0..result_vec.len() {
-                if l_format.contains(&"l".to_string()) {
+            for (op, _) in result_vec.iter() {
+                if l_format.contains(&op.to_string()) {
+                    println!("got hereee");
                     not_present = true;
                 }
             }
